@@ -1,4 +1,4 @@
-# Alexander Honkala Personal Website
+# Angelica Parente Personal Website
 
 A personal website featuring a generative starling murmuration background, built with Vite and Vanilla JS.
 

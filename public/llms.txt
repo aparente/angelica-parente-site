@@ -1,7 +1,7 @@
-# Alexander Honkala Personal Website
+# Angelica Parente Personal Website
 
 ## Description
-This is the personal website of Alexander Honkala, featuring a generative art background of a starling murmuration.
+This is the personal website of Angelica Parente, featuring a generative art background of a starling murmuration.
 
 ## Navigation
 - [Research](research.html) - Links to academic and personal research.
@@ -9,7 +9,7 @@ This is the personal website of Alexander Honkala, featuring a generative art ba
 - [Writing](writing.html) - Blog posts and essays.
 
 ## Context
-Alexander Honkala is a researcher and developer interested in generative art, complex systems, and web technologies. This site serves as a digital garden and portfolio.
+Angelica Parente is a researcher and developer interested in generative art, complex systems, and web technologies. This site serves as a digital garden and portfolio.
 
 ## Technical Details
 - Built with Vite and Vanilla JS.
