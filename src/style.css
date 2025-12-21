@@ -117,6 +117,8 @@ nav a:hover {
   background-color: #ffffff;
   color: #1a1a1a;
   padding: 4rem 2rem;
+  place-items: unset;
+  justify-content: unset;
 }
 
 .container {
