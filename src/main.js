@@ -14,8 +14,13 @@ let mouseY = -1000;
 function resize() {
   width = window.innerWidth;
   height = window.innerHeight;
-  canvas.width = width;
-  canvas.height = height;
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  canvas.style.width = `${width}px`;
+  canvas.style.height = `${height}px`;
+  ctx.scale(dpr, dpr);
+
   if (network) network.resize(width, height);
 }
 

@@ -89,13 +89,13 @@ export class Network {
 
                     // Base visibility + activation boost
                     // We want faint lines always, brighter lines when active
-                    const alpha = (0.05 + (activationFactor * 0.5)) * distFactor;
+                    const alpha = (0.2 + (activationFactor * 0.6)) * distFactor;
 
-                    if (alpha > 0.01) {
+                    if (alpha > 0.05) {
                         ctx.beginPath();
                         ctx.moveTo(node.position.x, node.position.y);
                         ctx.lineTo(neighbor.position.x, neighbor.position.y);
-                        ctx.strokeStyle = `rgba(74, 158, 255, ${alpha})`;
+                        ctx.strokeStyle = `rgba(30, 100, 200, ${alpha})`;
                         ctx.stroke();
                     }
 

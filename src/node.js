@@ -49,12 +49,13 @@ export class Node {
     draw(ctx) {
         // Only draw the node itself effectively if it's somewhat activated
         // or very subtly if resting.
-        const alpha = 0.1 + (this.activation * 0.9);
-        const size = 1 + (this.activation * 2);
+        // Base alpha higher so it's visible at rest
+        const alpha = 0.6 + (this.activation * 0.4);
+        const size = 3 + (this.activation * 4);
 
         ctx.beginPath();
         ctx.arc(this.position.x, this.position.y, size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(74, 158, 255, ${alpha})`;
+        ctx.fillStyle = `rgba(30, 100, 200, ${alpha})`; // Darker blue
         ctx.fill();
     }
 }
