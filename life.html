@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game of Life | Angelica Parente</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f9fa;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid #eee;
+    }
+
+    header a {
+      color: #000;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    header a:hover {
+      opacity: 0.6;
+    }
+
+    h1 {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    button {
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.7;
+    }
+
+    button.secondary {
+      background: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    .info {
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    #game-canvas {
+      flex: 1;
+      cursor: crosshair;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">&larr; Back</a>
+    <h1>Game of Life</h1>
+    <div class="controls">
+      <span class="info">Click to draw</span>
+      <span id="generation" class="info">Gen: 0</span>
+      <button id="play-pause">Play</button>
+      <button id="step" class="secondary">Step</button>
+      <button id="clear" class="secondary">Clear</button>
+      <button id="random" class="secondary">Random</button>
+    </div>
+  </header>
+  <canvas id="game-canvas"></canvas>
+  <script type="module" src="/src/life/index.js"></script>
+</body>
+
+</html>
