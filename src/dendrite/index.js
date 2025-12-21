@@ -60,10 +60,10 @@ class Node {
         else if (this.y < 0) this.y = height;
     }
 
-    draw(ctx) {
+    draw(ctx, color = '#000000') {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = color;
         ctx.fill();
     }
 }
@@ -188,9 +188,9 @@ export class DendriteSystem {
         return { x: steerX, y: steerY };
     }
 
-    draw(ctx) {
+    draw(ctx, color = '#000000') {
         // Draw connections first (behind nodes)
-        ctx.strokeStyle = '#000000';
+        ctx.strokeStyle = color;
         ctx.lineWidth = 0.5;
 
         for (let i = 0; i < this.nodes.length; i++) {
@@ -219,7 +219,7 @@ export class DendriteSystem {
 
         // Draw nodes
         for (const node of this.nodes) {
-            node.draw(ctx);
+            node.draw(ctx, color);
         }
     }
 }

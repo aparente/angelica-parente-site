@@ -3,14 +3,36 @@
   line-height: 1.5;
   font-weight: 400;
 
+  /* Day theme (default) */
+  --bg-color: #f8f9fa;
+  --text-color: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border-color: #eee;
+  --link-border: #ccc;
+  --node-color: #000000;
+
   color-scheme: light dark;
-  color: #1a1a1a;
-  background-color: #f8f9fa; /* Slightly off-white for better contrast with highlights */
+  color: var(--text-color);
+  background-color: var(--bg-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  transition: background-color 2s ease, color 2s ease;
+}
+
+/* Night theme - Liu Guosong inspired */
+:root.night-theme {
+  --bg-color: #0a0a0f;
+  --text-color: #e8e4df;
+  --text-secondary: #a09890;
+  --text-muted: #706860;
+  --border-color: #2a2520;
+  --link-border: #504540;
+  --node-color: #b43c32;
 }
 
 body {
@@ -38,10 +60,13 @@ body {
   z-index: 1;
   text-align: center;
   pointer-events: none;
-  color: #1a1a1a;
-  /* Dark text on light background */
+  color: var(--text-color);
   mix-blend-mode: multiply;
-  /* Subtle interaction with glass colors underneath */
+  transition: color 2s ease;
+}
+
+.night-theme #ui-layer {
+  mix-blend-mode: screen;
 }
 
 h1 {
@@ -61,11 +86,12 @@ h1 {
   font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: lowercase;
-  color: #555;
+  color: var(--text-secondary);
   margin: 0 0 2rem 0;
   opacity: 0;
   animation: fadeIn 2s ease-out forwards;
   animation-delay: 0.8s;
+  transition: color 2s ease;
 }
 
 nav {
@@ -78,7 +104,7 @@ nav {
 }
 
 nav a {
-  color: #1a1a1a;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 300;
@@ -86,13 +112,12 @@ nav a {
   letter-spacing: 0.05em;
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, color 2s ease;
   pointer-events: auto;
-  /* Re-enable clicks */
 }
 
 nav a:hover {
-  border-color: #1a1a1a;
+  border-color: var(--text-color);
   letter-spacing: 0.1em;
 }
 
@@ -114,11 +139,12 @@ nav a:hover {
   height: auto;
   min-height: 100vh;
   overflow: auto;
-  background-color: #ffffff;
-  color: #1a1a1a;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   padding: 4rem 2rem;
   place-items: unset;
   justify-content: unset;
+  transition: background-color 2s ease, color 2s ease;
 }
 
 .container {
@@ -140,7 +166,7 @@ nav a:hover {
 .back-link {
   display: inline-block;
   margin-bottom: 2rem;
-  color: #666;
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -149,7 +175,7 @@ nav a:hover {
 }
 
 .back-link:hover {
-  color: #000;
+  color: var(--text-color);
 }
 
 .content-page h1 {
@@ -167,14 +193,14 @@ nav a:hover {
   font-size: 1.5rem;
   margin-top: 3rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
 }
 
 .content-page p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
 }
 
@@ -189,20 +215,20 @@ nav a:hover {
 }
 
 .link-list a {
-  color: #1a1a1a;
+  color: var(--text-color);
   text-decoration: none;
-  border-bottom: 1px solid #ccc;
-  transition: border-color 0.2s;
+  border-bottom: 1px solid var(--link-border);
+  transition: border-color 0.2s, color 2s ease;
 }
 
 .link-list a:hover {
-  border-color: #000;
+  border-color: var(--text-color);
 }
 
 .date {
   display: block;
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
 
@@ -217,8 +243,9 @@ article h2 {
 }
 
 article h2 a {
-  color: #1a1a1a;
+  color: var(--text-color);
   text-decoration: none;
+  transition: color 2s ease;
 }
 
 article h2 a:hover {
