@@ -117,14 +117,23 @@ nav a:hover {
   background-color: #ffffff;
   color: #1a1a1a;
   padding: 4rem 2rem;
-  place-items: unset;
-  justify-content: unset;
 }
 
 .container {
   max-width: 800px;
+  margin: 0 auto;
   text-align: left;
   animation: fadeIn 1s ease-out forwards;
+}
+
+@media (max-width: 600px) {
+  .content-page {
+    padding: 2rem 1rem;
+  }
+
+  .content-page h1 {
+    font-size: 2rem;
+  }
 }
 
 .back-link {
