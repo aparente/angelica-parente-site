@@ -4,9 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #ffffff;
-  /* Start white as requested */
+  color: #1a1a1a;
+  background-color: #f8f9fa; /* Slightly off-white for better contrast with highlights */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -39,11 +38,10 @@ body {
   z-index: 1;
   text-align: center;
   pointer-events: none;
-  /* Let clicks pass through to canvas if needed */
   color: #1a1a1a;
-  /* Dark text on white background */
-  mix-blend-mode: difference;
-  /* Cool effect for text over birds */
+  /* Dark text on light background */
+  mix-blend-mode: multiply;
+  /* Subtle interaction with glass colors underneath */
 }
 
 h1 {

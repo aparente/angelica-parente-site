@@ -53,7 +53,7 @@ export class Network {
     }
 
     activateArea(x, y, radius = 100) {
-        const potentialNeighbors = this.grid.getNeighbors({ position: { x, y } }, radius);
+        const potentialNeighbors = this.grid.getNearby({ position: { x, y } }, radius);
         potentialNeighbors.forEach(node => {
             const dx = node.position.x - x;
             const dy = node.position.y - y;
@@ -75,7 +75,7 @@ export class Network {
             // Find neighbors for connections
             // We use a smaller radius for drawing connections than for searching
             const connectionRadius = 80;
-            const neighbors = this.grid.getNeighbors(node, connectionRadius);
+            const neighbors = this.grid.getNearby(node, connectionRadius);
 
             neighbors.forEach(neighbor => {
                 const dx = node.position.x - neighbor.position.x;
@@ -88,14 +88,17 @@ export class Network {
                     const activationFactor = (node.activation + neighbor.activation) * 0.5;
 
                     // Base visibility + activation boost
-                    // We want faint lines always, brighter lines when active
-                    const alpha = (0.2 + (activationFactor * 0.6)) * distFactor;
+                    const alpha = (0.04 + (activationFactor * 0.2)) * distFactor;
 
-                    if (alpha > 0.05) {
+                    if (alpha > 0.01) {
                         ctx.beginPath();
                         ctx.moveTo(node.position.x, node.position.y);
                         ctx.lineTo(neighbor.position.x, neighbor.position.y);
-                        ctx.strokeStyle = `rgba(30, 100, 200, ${alpha})`;
+
+                        // Subtle iridescent hue shift for lines
+                        const lineHue = 200 + activationFactor * 40;
+                        ctx.strokeStyle = `hsla(${lineHue}, 60%, 75%, ${alpha})`;
+                        ctx.lineWidth = 0.4 + activationFactor * 1.0;
                         ctx.stroke();
                     }
 
