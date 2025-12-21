@@ -12,19 +12,30 @@
 <body class="content-page">
     <div class="container">
         <header>
-            <a href="index.html" class="back-link">← Back to Home</a>
-            <h1>Writing</h1>
+            <a href="index.html" class="back-link">&larr; Back to Home</a>
         </header>
-        <main id="posts-list">
-            <p>Loading posts...</p>
+        <main>
+            <div id="intro"></div>
+            <div id="posts-list">
+                <p>Loading posts...</p>
+            </div>
         </main>
     </div>
     <script type="module">
+        import { marked } from 'marked';
+
+        // Load intro
+        fetch('pages/writing.md')
+            .then(r => r.text())
+            .then(md => {
+                document.getElementById('intro').innerHTML = marked.parse(md);
+            });
+
+        // Load posts
         fetch('posts/index.json')
             .then(r => r.json())
             .then(posts => {
-                const container = document.getElementById('posts-list');
-                container.innerHTML = posts.map(post => `
+                document.getElementById('posts-list').innerHTML = posts.map(post => `
                     <article>
                         <h2><a href="post.html?slug=${post.slug}">${post.title}</a></h2>
                         <span class="date">${post.date}</span>

@@ -13,27 +13,22 @@
     <div class="container">
         <header>
             <a href="index.html" class="back-link">&larr; Back to Home</a>
-            <h1>Contact</h1>
         </header>
-        <main>
-            <section>
-                <ul class="link-list">
-                    <li><a id="email-link" href="#">Email</a></li>
-                    <script>
-                        (function() {
-                            var u = 'aparente';
-                            var d = 'alumni.stanford.edu';
-                            var e = u + '@' + d;
-                            var link = document.getElementById('email-link');
-                            link.href = 'mailto:' + e;
-                        })();
-                    </script>
-                    <li><a href="https://www.linkedin.com/in/angelicaparente/">LinkedIn</a></li>
-                    <li><a href="https://x.com/draparente">Twitter</a></li>
-                </ul>
-            </section>
+        <main id="content">
+            <p>Loading...</p>
         </main>
     </div>
+    <script type="module">
+        import { marked } from 'marked';
+        fetch('pages/contact.md')
+            .then(r => r.text())
+            .then(md => {
+                document.getElementById('content').innerHTML = marked.parse(md);
+            })
+            .catch(() => {
+                document.getElementById('content').innerHTML = '<p>Could not load content.</p>';
+            });
+    </script>
 </body>
 
 </html>

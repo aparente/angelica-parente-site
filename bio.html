@@ -13,22 +13,22 @@
     <div class="container">
         <header>
             <a href="index.html" class="back-link">&larr; Back to Home</a>
-            <h1>Bio</h1>
         </header>
-        <main>
-            <section>
-                <p></p>
-            </section>
-            <section>
-                <h2>Background</h2>
-                <p>[Your background here]</p>
-            </section>
-            <section>
-                <h2>Current Work</h2>
-                <p>[What you're working on now]</p>
-            </section>
+        <main id="content">
+            <p>Loading...</p>
         </main>
     </div>
+    <script type="module">
+        import { marked } from 'marked';
+        fetch('pages/bio.md')
+            .then(r => r.text())
+            .then(md => {
+                document.getElementById('content').innerHTML = marked.parse(md);
+            })
+            .catch(() => {
+                document.getElementById('content').innerHTML = '<p>Could not load content.</p>';
+            });
+    </script>
 </body>
 
 </html>
