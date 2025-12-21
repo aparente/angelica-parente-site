@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    base: '/alexander-honkala-site/',
+    base: '/angelica-parente-site/',
     build: {
         rollupOptions: {
             input: {
