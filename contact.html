@@ -18,7 +18,16 @@
         <main>
             <section>
                 <ul class="link-list">
-                    <li><a href="mailto:angelica@example.com">Email</a></li>
+                    <li><a id="email-link" href="#">Email</a></li>
+                    <script>
+                        (function() {
+                            var u = 'aparente';
+                            var d = 'alumni.stanford.edu';
+                            var e = u + '@' + d;
+                            var link = document.getElementById('email-link');
+                            link.href = 'mailto:' + e;
+                        })();
+                    </script>
                     <li><a href="https://www.linkedin.com/in/angelicaparente/">LinkedIn</a></li>
                     <li><a href="https://x.com/draparente">Twitter</a></li>
                 </ul>
