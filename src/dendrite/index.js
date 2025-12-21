@@ -14,9 +14,14 @@ class Node {
         this.vy = (Math.random() - 0.5) * 2;
         this.ax = 0;
         this.ay = 0;
-        this.size = Math.random() * 1.5 + 1;
+        this.baseSize = Math.random() * 1.5 + 1;
+        this.size = this.baseSize;
         this.maxSpeed = 1.5;
         this.maxForce = 0.03;
+
+        // Breathing - each node has its own phase
+        this.breathePhase = Math.random() * Math.PI * 2;
+        this.breatheSpeed = 0.02 + Math.random() * 0.01; // Slightly varied speeds
     }
 
     applyForce(fx, fy) {
@@ -43,6 +48,10 @@ class Node {
         // Reset acceleration
         this.ax = 0;
         this.ay = 0;
+
+        // Breathing - subtle size oscillation
+        this.breathePhase += this.breatheSpeed;
+        this.size = this.baseSize * (1 + Math.sin(this.breathePhase) * 0.15);
 
         // Wrap edges
         if (this.x > width) this.x = 0;
