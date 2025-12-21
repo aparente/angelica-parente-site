@@ -111,17 +111,19 @@ nav a:hover {
 /* Content Page Styles */
 .content-page {
   display: block;
-  /* Reset flex from body */
+  height: auto;
+  min-height: 100vh;
   overflow: auto;
-  /* Allow scrolling */
   background-color: #ffffff;
   color: #1a1a1a;
   padding: 4rem 2rem;
+  place-items: unset;
+  justify-content: unset;
 }
 
 .container {
   max-width: 800px;
-  margin: 0 auto;
+  text-align: left;
   animation: fadeIn 1s ease-out forwards;
 }
 
