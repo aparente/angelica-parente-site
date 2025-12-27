@@ -153,13 +153,61 @@ nav a:hover {
   animation: fadeIn 1s ease-out forwards;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
 @media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  nav {
+    gap: 0.4rem 0.8rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+  }
+
   .content-page {
     padding: 2rem 1rem;
   }
 
   .content-page h1 {
     font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .content-page h2 {
+    font-size: 1.3rem;
+  }
+
+  .content-page p {
+    font-size: 1rem;
   }
 }
 
