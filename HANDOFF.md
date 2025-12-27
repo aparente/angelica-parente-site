@@ -1,28 +1,119 @@
-# Handoff Note: Angelica Parente Site Migration
+# Angelica Parente Site - Development Log
 
-## Design Goals & Context
-- **User**: Angelica Parente, Biophysicist & Venture Capitalist (AI, Novel Therapeutics, Microglia).
-- **Core Theme**: "Emergent Network Intelligence". A visualization of distributed systems found in nature (immune swarms, neural firing) and machines (AI).
-- **Visuals**: A "thinking" network of nodes that drift, form transient connections, and propagate signals.
-    - **Interaction**: Cursor acts as a stimulus, injecting energy that pulses through the network.
-    - **Aesthetic**: Deep blues/cyans, glowing connections, organic but computational. Distinct from the "Starling Murmuration" of the original repo.
+## Site Overview
+- **Owner**: Angelica Parente
+- **Tagline**: "programming intelligence into immunity"
+- **Live URL**: https://www.angelica-parente.com
+- **Repo**: https://github.com/aparente/angelica-parente-site
 
-## Current Technical Status
-- **Repository**: `~/github_repositories/angelica-parente-site` (Cloned and active).
-- **Live Site**: `https://aparente.github.io/angelica-parente-site/`
+## Current State (December 2024)
 
-## The Issue
-The user reports the **animation is not visible**.
+### Design System
+- **Day/Night Theme**: Automatic based on Pacific timezone
+  - Day: Light background, black nodes
+  - Night: Dark background (#0a0a0f), red nodes (#b43c32), glowing red sun (Liu Guosong inspired)
+- **Typography**: Inter font, uppercase headings, letter-spacing for elegance
+- **Animation**: Neural network with flocking behavior and breathing motion
 
-## Critical Debugging Context
-1.  **Server Conflict**: The `Play` folder (Alexander's site) is likely running on **port 5173**.
-2.  **The Fixes (Applied in this folder only)**:
-    - **Retina Support**: Added `devicePixelRatio` scaling to `src/main.js` (essential for visibility on Mac).
-    - **High Contrast**: Increased alpha/size of nodes in `node.js` and `network.js`.
-    - **Visual Verification**: Previous agent confirmed visibility of a "blue vignette" network *locally* on the correct port.
+### Navigation Structure
+```
+Home
+├── Being.html     → pages/Being.md
+├── Thinking.html  → pages/Thinking.md
+├── Fixating.html  → pages/Fixating.md
+├── Research.html  → pages/research.md
+├── Contact.html   → pages/contact.md
+└── (hidden) life.html - Conway's Game of Life
+```
 
-## Next Steps for Agent
-1.  **Kill old server**: Stop process in `~/github_repositories/Play`.
-2.  **Start new server**: Run `npm run dev` in `~/github_repositories/angelica-parente-site`.
-3.  **Verify**: Confirm the animation (blue network) is visible on localhost.
-4.  **Refine**: If needed, verify the `style.css` background contrast or further tune opacity.
+### Content Management
+All pages load markdown at runtime via `marked.js`:
+- **Pages**: `public/pages/*.md`
+- **Posts**: `public/posts/*.md` + `public/posts/index.json`
+
+Edit markdown in Obsidian, push to deploy.
+
+---
+
+## Change Log
+
+### 2024-12-27: Domain & Mobile Setup
+
+**Custom Domain Configuration**
+- Domain: www.angelica-parente.com (via Squarespace DNS)
+- DNS: A records → GitHub Pages IPs, CNAME www → aparente.github.io
+- HTTPS enforced
+- Updated `vite.config.js` base from `/angelica-parente-site/` to `/`
+
+**Mobile Responsive Styles**
+- Added breakpoints at 768px and 600px
+- Homepage: Scales h1, tagline, nav for smaller screens
+- Nav wraps on mobile with reduced gaps
+- Content pages: Adjusted padding, font sizes
+
+**Network Animation Enhancement**
+- Increased edge line weight: 0.5 → 1.5
+- Increased edge opacity: 0.3 → 0.7
+- Network connections now bold and visible
+
+**Search Engine Blocking (temporary)**
+- Added `robots.txt` blocking all crawlers
+- Added `<meta name="robots" content="noindex, nofollow">` to index.html
+- Remove when ready to launch publicly
+
+### 2024-12-21: Site Structure Overhaul
+
+**Page Restructure**
+- Removed: Bio, Writing, Likes pages
+- Added: Being, Thinking, Fixating pages
+- All pages now load content from markdown files
+
+**Markdown Runtime Rendering**
+- Pages fetch from `public/pages/*.md`
+- Posts fetch from `public/posts/*.md`
+- Index managed via `public/posts/index.json`
+
+**Contact Page**
+- Email obfuscated via JavaScript (anti-spam)
+- Links: Email, LinkedIn, Twitter/X
+
+---
+
+## Technical Details
+
+### Build System
+- Vite with vanilla JS
+- Multi-page app (rollup inputs for each HTML file)
+- Deploys via GitHub Actions to GitHub Pages
+
+### Key Files
+```
+src/
+├── main.js          # Canvas setup, animation loop, theme switching
+├── style.css        # All styles including day/night themes
+├── theme.js         # Pacific timezone day/night detection
+└── dendrite/
+    └── index.js     # Neural network animation (flocking + breathing)
+
+public/
+├── pages/           # Markdown content for pages
+├── posts/           # Markdown blog posts + index.json
+├── CNAME            # Custom domain config
+├── robots.txt       # Search engine blocking
+└── llms.txt         # LLM-readable site summary
+```
+
+### Animation Parameters (dendrite/index.js)
+- Node count: 800
+- Connection radius: 60px
+- Edge line width: 1.5
+- Edge opacity: alpha * 0.7
+- Breathing: ±15% size oscillation, varied phases
+
+---
+
+## TODO / Future Work
+- [ ] Remove robots.txt and noindex when ready to launch
+- [ ] Fill in Being/Thinking/Fixating content
+- [ ] Add actual blog posts
+- [ ] Consider: favicon, Open Graph meta tags
