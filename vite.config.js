@@ -7,11 +7,11 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                bio: resolve(__dirname, 'bio.html'),
-                contact: resolve(__dirname, 'contact.html'),
+                being: resolve(__dirname, 'Being.html'),
+                thinking: resolve(__dirname, 'Thinking.html'),
+                fixating: resolve(__dirname, 'Fixating.html'),
                 research: resolve(__dirname, 'research.html'),
-                likes: resolve(__dirname, 'likes.html'),
-                writing: resolve(__dirname, 'writing.html'),
+                contact: resolve(__dirname, 'contact.html'),
                 life: resolve(__dirname, 'life.html'),
                 post: resolve(__dirname, 'post.html'),
             },
