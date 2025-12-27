@@ -192,7 +192,7 @@ export class DendriteSystem {
         // Draw connections first (behind nodes)
         // The lines are the soul of the network - they show relationship, proximity, intelligence
         ctx.strokeStyle = color;
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.5;
 
         for (let i = 0; i < this.nodes.length; i++) {
             const node = this.nodes[i];
@@ -206,7 +206,7 @@ export class DendriteSystem {
                 if (dist < this.connectionRadius) {
                     // Fade connection based on distance - closer nodes have stronger bonds
                     const alpha = 1 - dist / this.connectionRadius;
-                    ctx.globalAlpha = alpha * 0.5;
+                    ctx.globalAlpha = alpha * 0.7;
 
                     ctx.beginPath();
                     ctx.moveTo(node.x, node.y);
