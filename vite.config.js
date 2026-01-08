@@ -7,7 +7,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                being: resolve(__dirname, 'Being.html'),
+                doing: resolve(__dirname, 'Doing.html'),
                 thinking: resolve(__dirname, 'Thinking.html'),
                 fixating: resolve(__dirname, 'Fixating.html'),
                 research: resolve(__dirname, 'research.html'),
