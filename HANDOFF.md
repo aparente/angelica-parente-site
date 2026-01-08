@@ -152,6 +152,9 @@ The neural network animation reflects how she thinks — "sees the whole graph a
 - Obsessing — fixations
 - Building — outputs
 
+### Design Philosophy Note
+The neural network animation and ambient-alerts share the same design language: **information communicated through subtlety, not shouting**. Color shifts instead of alerts. Breathing nodes instead of static dots. Peripheral awareness instead of interruption. This is consistent across everything Angelica builds — it feels like *her*.
+
 ### Decision
 TBD — nothing felt quite right yet. Needs to marinate.
 
