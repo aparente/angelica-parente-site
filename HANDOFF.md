@@ -112,8 +112,54 @@ public/
 
 ---
 
+## Page Naming Ideation (2025-01-08)
+
+### Context
+Angelica is a biotech operator + VC Operating Partner with a nontraditional background. The site should convey curiosity, playfulness, professionalism without being stuffy. Key tension: **legible** (has credentials) but **illegible** (path doesn't fit templates, accumulated oddly specific knowledge through a "directed random walk").
+
+The neural network animation reflects how she thinks — "sees the whole graph at once."
+
+### Content Categories Needed
+1. **Who she is** — origin story, the path, identity
+2. **Absorbing** — inputs (reading, listening, watching)
+3. **Writing** — ideas, essays, sharing thoughts
+4. **Obsessing** — fixations, music, art, things that should exist
+5. **Building** — projects, companies
+
+### Naming Options Explored
+
+**Direction A: Lean into legible/illegible tension**
+- Legible — the short version (credentials)
+- Illegible — the real version (the weird path)
+- Absorbing / Writing / Building
+
+**Direction B: Signal/Noise metaphor**
+- Source — origin
+- Signal — inputs
+- Noise — obsessions, tangents
+- Output — building
+
+**Direction C: Her language**
+- The Graph — how she sees
+- The Walk — the directed random path
+- The Signal — inputs
+- The Bet — what she's building
+
+**Direction D: Simple gerunds**
+- Source (breaks pattern, it's the foundation)
+- Absorbing — inputs
+- Writing — essays, ideas
+- Obsessing — fixations
+- Building — outputs
+
+### Decision
+TBD — nothing felt quite right yet. Needs to marinate.
+
+---
+
 ## TODO / Future Work
+- [ ] Finalize page naming structure
 - [ ] Remove robots.txt and noindex when ready to launch
-- [ ] Fill in Being/Thinking/Fixating content
+- [ ] Fill in page content
 - [ ] Add actual blog posts
 - [ ] Consider: favicon, Open Graph meta tags
