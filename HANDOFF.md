@@ -18,11 +18,11 @@
 ### Navigation Structure
 ```
 Home
-├── Being.html     → pages/Being.md
-├── Thinking.html  → pages/Thinking.md
-├── Fixating.html  → pages/Fixating.md
-├── Research.html  → pages/research.md
-├── Contact.html   → pages/contact.md
+├── About.html      → pages/About.md
+├── Exploring.html  → pages/Exploring.md
+├── Thinking.html   → pages/Thinking.md
+├── Building.html   → pages/Building.md
+├── contact.html    → pages/Contact.md
 └── (hidden) life.html - Conway's Game of Life
 ```
 
@@ -185,8 +185,21 @@ Her definition of building generational companies: "turning the illegible into t
 
 The strongest trait she shares with the people she loves: "seeing what the world could be and funneling all of our stubbornness, curiosity, frustration, and hope into making it reality." The site should attract those people. It's not trying to appeal to everyone — it's a beacon for her tribe.
 
-### Decision
-TBD — nothing felt quite right yet. Needs to marinate.
+### Decision (2025-01-08)
+
+**Final structure:**
+```
+ABOUT   EXPLORING   THINKING   BUILDING   CONTACT
+```
+
+- **About** — one noun anchor, the foundation (who she is)
+- **Exploring** — inputs, things following, papers, posts enjoyed
+- **Thinking** — ideas, essays (process, not polished output)
+- **Building** — projects, things shipped
+
+The rhythm: Origin → Input → Process → Output
+
+Three gerunds (Exploring, Thinking, Building) with one noun anchor (About). The content is where the personality lives, not the labels.
 
 ---
 
