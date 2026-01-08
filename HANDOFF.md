@@ -153,7 +153,37 @@ The neural network animation reflects how she thinks — "sees the whole graph a
 - Building — outputs
 
 ### Design Philosophy Note
-The neural network animation and ambient-alerts share the same design language: **information communicated through subtlety, not shouting**. Color shifts instead of alerts. Breathing nodes instead of static dots. Peripheral awareness instead of interruption. This is consistent across everything Angelica builds — it feels like *her*.
+
+**The Core Tension: Legible / Illegible**
+
+Angelica exists in the tension between legible and illegible. Her CV has the credentials — the degrees, the roles, the companies. But her path doesn't fit templates. She was diagnosed by a patient advocate before a doctor. She relaxes by watching immunology talks. She's accumulated an "oddly specific set of knowledge, experience, and a network" through what she calls a "directed random walk through life."
+
+The site should honor both. The legible version gets you in the door. The illegible version is why you stay.
+
+**How She Thinks: The Whole Graph at Once**
+
+Her ADHD brain defaults to seeing all the nodes and their connections simultaneously. This is literal — she thinks through model parameters, NPV calculations, regulatory pathways, patient journeys, and partnership dynamics as a connected system, not a checklist.
+
+The neural network animation *is* how she thinks. It's not decoration. The nodes don't stay still. The connections form and dissolve. Patterns emerge from what looks like chaos. That's the inside of her head, rendered on screen.
+
+**The Aesthetic: Subtlety, Not Shouting**
+
+The neural network animation and ambient-alerts share the same design language: **information communicated through subtlety, not shouting**.
+
+- Color shifts instead of alerts
+- Breathing nodes instead of static dots
+- Peripheral awareness instead of interruption
+- Edges that strengthen and fade based on proximity
+
+This is consistent across everything she builds. It's not minimalism for minimalism's sake — it's respect for attention. Information should be *available*, not *demanding*.
+
+**Building as Translation**
+
+Her definition of building generational companies: "turning the illegible into the legible." Making something only a few people can see visible to everyone else. The site itself should be that act — making *her* legible, on her own terms, to the right people.
+
+**Finding Her Tribe**
+
+The strongest trait she shares with the people she loves: "seeing what the world could be and funneling all of our stubbornness, curiosity, frustration, and hope into making it reality." The site should attract those people. It's not trying to appeal to everyone — it's a beacon for her tribe.
 
 ### Decision
 TBD — nothing felt quite right yet. Needs to marinate.
